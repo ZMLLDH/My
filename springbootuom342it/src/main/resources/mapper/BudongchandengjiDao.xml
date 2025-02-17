@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.BudongchandengjiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.BudongchandengjiEntity" id="budongchandengjiMap">
+        <result property="yewubianhao" column="yewubianhao"/>
+        <result property="budongchanmingcheng" column="budongchanmingcheng"/>
+        <result property="budongchanleixing" column="budongchanleixing"/>
+        <result property="suoshuquan" column="suoshuquan"/>
+        <result property="budongchanqingkuang" column="budongchanqingkuang"/>
+        <result property="xiangguanzhengjian" column="xiangguanzhengjian"/>
+        <result property="shifouchuzu" column="shifouchuzu"/>
+        <result property="dengjishijian" column="dengjishijian"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="longitude" column="longitude"/>
+        <result property="latitude" column="latitude"/>
+        <result property="fulladdress" column="fulladdress"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.BudongchandengjiVO" >
+		SELECT * FROM budongchandengji  budongchandengji         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.BudongchandengjiVO" >
+		SELECT  budongchandengji.* FROM budongchandengji  budongchandengji 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.BudongchandengjiView" >
+
+		SELECT  budongchandengji.* FROM budongchandengji  budongchandengji 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.BudongchandengjiView" >
+		SELECT * FROM budongchandengji  budongchandengji <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
